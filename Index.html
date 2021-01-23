@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Fetch OpenWeatherMap </title>
+
+        <style>
+            body {
+                background: grey;
+            }
+               #weatherbug {
+                   border:6px solid rgb(red, green, blue);
+                   border-radius: 1em;
+                   background-color: purple;
+                   width: 14em ;
+                   padding: 1em;
+                   color: white;
+                   font-family: sans-serif;
+               }
+            
+            main {
+                margin: auto;
+                padding: 1em;
+                background-color: #eee;
+            }
+            button {
+                display: block;
+                font-size: 1em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <button id="findLocation"> Show my location </button>
+        <p id="status">No location yet </p>
+
+        <div id="weatherbug">
+
+            <h1>Weather Bug</h1>
+            <p> No Weather Data </p>
+        </div>
+
+        <script src="main.js" charset="UTF-8" type="text/javascript"></script>
+
+        <script>
+
+            // /// Geolocation
+
+            // document.querySelector('#findLocation').addEventListener('click', geoLookup, false);
+
+            // function geoLookup () {
+
+            //     const status = document.querySelector('#status');
+
+            //     function success(position) {
+            //         const latitude = position.latitude;
+            //         const longtitude = position.longtitude;
+            //         status.textContent = ` lat: ${latitude}, lon: ${longtitude} `;
+            //     }
+
+            //     function error(err) {
+            //         status.textContent = `Unable to retrieve your location. Error: ${err.code}, ${err.message}`
+            //     }
+
+            //     if (!navigator.geolocation) {
+            //         status.textContent = 'Your position dont have in your browser';
+            //     } else {
+            //         status.textContent = 'Loading ... '
+            //         navigator.geolocation.getCurrentPosition(success, error);
+            //     }
+            // }
+            // /// WeatherBug
+            // const p = document.querySelector('#weatherbug p');
+
+            // let openWeatherData = {}
+            // let xhr = new XMLHttpRequest();
+
+            // xhr.open('GET', `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${openWeatherKey}&units=imperial`);
+            // const lat = 35;
+            // const lon = 139;
+
+            // xhr.response = 'text';
+
+            // xhr.addEventListener('load', function() {
+            //     if (xhr.status === 200) {
+            //         p.textContent ="loading...";
+            //         openWeatherData = JSON.parse(xhr.responseText);
+            //         populateWeatherInfo()
+            //     } else {
+            //         p.textContent = "error: " + xhr.status
+            //     }
+            // }, false)
+
+            // xhr.send()
+            //  function populateWeatherInfo() {
+
+            //     //name , temp, wind, time 
+            //      const location = openWeatherData.name;
+            //      const temp = Math.round(openWeatherData.main.temp);
+            //      const wind = Math.round(openWeatherData.wind.speed);
+            //      const time = new Date(openWeatherData.dt * 1000);
+            //      const hrs = time.getHours();
+            //      const mins = time.getMinutes();
+
+            //      const str = `${location}<br>${temp}&#0176;<br>wind: ${wind}mph <br> ${hrs}:${mins}`;
+            //      p.innerHTML = str;
+            //  }
+
+        </script>
+    </body>
+</html>
